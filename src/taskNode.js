@@ -1,5 +1,3 @@
-import imgBin from "./images/trash-can.png";
-
 function createTaskNoteNode(task) {
   const taskNode = document.createElement("div");
 
@@ -16,9 +14,7 @@ function createTaskNoteNode(task) {
   taskTitle.textContent = task.title;
 
   const btnDelete = document.createElement("button");
-  btnDelete.classList.add("btn-delete");
-  btnDelete.setAttribute("background", imgBin);
-  btnDelete.textContent = "Remove";
+  btnDelete.classList.add("task-delete");
   const footer = document.createElement("div");
   footer.appendChild(btnDelete);
 
