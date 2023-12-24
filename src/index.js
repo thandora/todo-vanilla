@@ -1,6 +1,6 @@
 import { Task, TaskManager } from "./task";
 import { createTaskNoteNode } from "./taskNode";
-import { createListNode } from "./task-lists";
+import { createListNode } from "./task-lists-node";
 import "./style.css";
 
 const task1 = new Task("Task Title", "Task description", "Task duedate", 1);
