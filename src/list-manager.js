@@ -12,3 +12,5 @@ class ListManager {
     this.lists = this.lists.filter((list) => list.id !== listId);
   }
 }
+
+export { ListManager };
