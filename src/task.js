@@ -10,22 +10,24 @@ class Task {
   }
 }
 
-const TaskManager = (function () {
-  const tasks = [];
-
-  function addTask(task) {
-    tasks.push(task);
+class TaskManager {
+  constructor(title, description) {
+    this.title = title;
+    this.description = description;
+    this.tasks = [];
   }
 
-  function removeTask(taskId) {
-    tasks = tasks.filter((task) => task.id !== taskId);
+  addTask(task) {
+    this.tasks.push(task);
   }
 
-  function getTasks() {
+  removeTask(taskId) {
+    this.tasks = this.tasks.filter((task) => task.id !== taskId);
+  }
+
+  getTasks() {
     return this.tasks;
   }
-
-  return { addTask, removeTask, getTasks };
-})();
+}
 
 export { Task, TaskManager };
