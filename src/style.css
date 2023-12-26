@@ -52,16 +52,66 @@ body {
   color: #091a14;
 }
 
+/* Tasks section */
+.tasks-container {
+  padding: 26px 18px;
+  overflow-y: auto;
+}
 
-.task-delete {
+.tasks-container .list-title {
+  margin: 12px 0;
+}
+
+.tasks {
+  height: min-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.tasks .note-view {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+  max-width: 300px;
+  min-width: 240px;
+  min-height: 220px;
+  height: min-content;
+
+  padding: 16px 18px;
+  padding-bottom: 10px;
+  background-color: #132631;
+  border-radius: 8px;
+}
+
+.tasks .note-view .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks .note-view .footer {
+  margin-left: auto;
+  margin-top: auto;
+}
+
+.tasks .note-view .task-delete {
   margin: 0;
   padding: 0;
   border: none;
-  height: 30px;
-  width: 30px;
+  height: 32px;
+  width: 32px;
   border-radius: 4px;
   background: url("./images/trash-can.png") no-repeat rgb(252, 128, 128);
   background-position: center;
   background-size: 24px 24px;
   cursor: pointer;
+}
+
+/* Task view */
+.task-view {
+  background-color: #11211b;
+  border-left: 1px solid #2b4574;
 }
