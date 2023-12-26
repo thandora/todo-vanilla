@@ -43,6 +43,7 @@ function attachLoadTitle(listNode, list) {
     document.querySelector(`.${TASK_TITLE_CLASS}`).textContent = list.title;
   });
 }
+
 function loadTasks(tasks, containerClass) {
   const domTasks = document.querySelector(`.${containerClass}`);
 

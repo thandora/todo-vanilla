@@ -25,7 +25,7 @@ body {
 .task-lists {
   grid-column: 1 / 2;
   background-color: #11211b;
-  border-right: 1px solid #2b4574;
+  border-right: 1px solid #22312c;
   padding: 26px 14px;
 }
 
@@ -54,12 +54,23 @@ body {
 
 /* Tasks section */
 .tasks-container {
-  padding: 26px 18px;
   overflow-y: auto;
 }
 
+.tasks-container .title-container,
+.tasks-container .tasks {
+  padding: 16px;
+}
+
+.tasks-container .title-container {
+  position: sticky;
+  top: 0;
+  background-color: #11211b;
+  border-bottom: 1px solid #22312c;
+}
+
 .tasks-container .list-title {
-  margin: 12px 0;
+  margin: 0;
 }
 
 .tasks {
@@ -113,5 +124,5 @@ body {
 /* Task view */
 .task-view {
   background-color: #11211b;
-  border-left: 1px solid #2b4574;
+  border-left: 1px solid #22312c;
 }
