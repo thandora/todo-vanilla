@@ -10,15 +10,23 @@ function createTaskNoteNode(task) {
   header.classList.add("header");
   header.append(priorityContainer, dueContainer);
 
-  const taskTitle = document.createElement("p");
+  const taskTitle = document.createElement("h3");
+  taskTitle.classList.add("title");
   taskTitle.textContent = task.title;
+  const taskDescription = document.createElement("p");
+  taskDescription.classList.add("description");
+  taskDescription.textContent = task.taskDescription;
+  const body = document.createElement("div");
+  body.classList.add("body");
+  body.append(taskTitle, taskDescription);
 
   const btnDelete = document.createElement("button");
   btnDelete.classList.add("task-delete");
   const footer = document.createElement("div");
+  footer.classList.add("footer");
   footer.appendChild(btnDelete);
 
-  taskNode.append(header, taskTitle, footer);
+  taskNode.append(header, body, footer);
   taskNode.classList.add("note-view");
   return taskNode;
 }
