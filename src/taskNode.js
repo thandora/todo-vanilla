@@ -15,7 +15,7 @@ function createTaskNoteNode(task) {
   taskTitle.textContent = task.title;
   const taskDescription = document.createElement("p");
   taskDescription.classList.add("description");
-  taskDescription.textContent = task.taskDescription;
+  taskDescription.textContent = task.description;
   const body = document.createElement("div");
   body.classList.add("body");
   body.append(taskTitle, taskDescription);
