@@ -19,3 +19,7 @@ This is a list of assets used to be credited in a stand-alone section on the sit
 --primary: #90d6bd;
 --secondary: #2b4574;
 --accent: #636dc6;
+
+## Todo
+
+- [ ] Circular checkbox?
