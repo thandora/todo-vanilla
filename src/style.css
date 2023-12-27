@@ -125,4 +125,33 @@ body {
 .task-view {
   background-color: #11211b;
   border-left: 1px solid #22312c;
+  padding: 26px 14px;
+}
+
+.task-view form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.task-view .form-column {
+  padding: 8px 8px;
+  background-color: #1c362d;
+  border-radius: 4px;
+}
+
+.task-view input[type="text"],
+.task-view textarea {
+  outline: none;
+  color: #ddf2eb;
+  background-color: #1c362d;
+  border: none;
+}
+
+.task-view input[type="text"] {
+  font-size: 18px;
+}
+
+.task-view textarea {
+  font-size: 16px;
 }

@@ -8,7 +8,7 @@ import "./style.css";
 const task1 = new Task("Task Title", "Task description", "Task duedate", 1);
 const task2 = new Task(
   "Another Task",
-  "This is a pretty long task description, wouldn't you say?",
+  "This is a pretty long task description, wouldn't you say?This is a pretty long task description, wouldn't you say?This is a pretty long task description, wouldn't you say?",
   "not now",
   5
 );

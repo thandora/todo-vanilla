@@ -14,13 +14,30 @@
   <body>
     <div class="main-container">
       <div class="task-lists"></div>
+
       <div class="tasks-container">
         <div class="title-container">
           <h2 class="list-title"></h2>
         </div>
         <div class="tasks"></div>
       </div>
-      <div class="task-view"></div>
+
+      <div class="task-view">
+        <form action="" method="get">
+          <div class="form-column"></div>
+
+          <div class="form-column">
+            <input type="checkbox" name="is-finished" class="checkbox-status" />
+            <input type="text" name="task-title" minlength="1" required placeholder="Task title" />
+          </div>
+
+          <div class="form-column">
+            <textarea name="task-description" id="" cols="30" rows="10">Description</textarea>
+          </div>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
