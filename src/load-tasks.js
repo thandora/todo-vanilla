@@ -1,5 +1,5 @@
 import { createListNode } from "./task-lists-node";
-import { createTaskNoteNode } from "./taskNode";
+import { createTaskNoteNode } from "./taskNoteNode";
 
 const CONTAINER_CLASS = "tasks";
 const TASK_TITLE_CLASS = "list-title";
