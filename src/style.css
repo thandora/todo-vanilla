@@ -142,7 +142,6 @@ body {
   border-radius: 4px;
 }
 
-
 .task-view textarea {
   font-family: 'Roboto', sans-serif;
   width: 100%;
@@ -166,6 +165,16 @@ input[type="checkbox"] {
   background-color: black;
 }
 
-#title {
-  word-wrap: break-word;
+button[type="submit"] {
+  border-radius: 4px;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  height: 28px;
+  background-color: #90d6bd;
+}
+
+button[type="submit"]:hover {
+
+  background-color: #699c8a;
 }
