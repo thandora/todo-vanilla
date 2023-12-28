@@ -5,15 +5,15 @@ import { loadLists, attachListEvents } from "./load-tasks";
 import { assignPriorityClass } from "./load-task-view";
 import "./style.css";
 
-// Create  tasks
-const task1 = new Task("Task Title", "Task description", "Task duedate", 1);
+// Create  sample tasks
+const task1 = new Task("Task Title", "Task description", new Date("2023-05-02"), 1);
 const task2 = new Task(
   "Another Task",
   "This is a pretty long task description, wouldn't you say?This is a pretty long task description, wouldn't you say?This is a pretty long task description, wouldn't you say?",
-  "not now",
-  5
+  new Date("2022-02-04"),
+  2
 );
-const task3 = new Task("buy flour", "at supermarket", "this week", "2");
+const task3 = new Task("buy flour", "at supermarket", new Date("2023-12-25"), "2");
 
 // Create task lists
 const list1 = new TaskManager("General");
