@@ -1,10 +1,13 @@
+import { format } from "date-fns";
+const DATE_FORMAT = "MMM d yyyy";
+
 function createTaskNoteNode(task) {
   const taskNode = document.createElement("div");
 
   const priorityContainer = document.createElement("div");
   priorityContainer.textContent = task.priority;
   const dueContainer = document.createElement("div");
-  dueContainer.textContent = task.dueDate;
+  dueContainer.textContent = format(task.dueDate, DATE_FORMAT);
 
   const header = document.createElement("div");
   header.classList.add("header");
