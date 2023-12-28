@@ -2,6 +2,7 @@ import { Task } from "./task";
 import { TaskManager } from "./task-manager";
 import { ListManager } from "./list-manager";
 import { loadLists, attachListEvents } from "./load-tasks";
+import { assignPriorityClass } from "./load-task-view";
 import "./style.css";
 
 // Create  tasks
@@ -31,3 +32,5 @@ listManager.addList(list2);
 loadLists(listManager.lists);
 const listNodes = document.querySelectorAll(".btn-list");
 attachListEvents(listNodes);
+
+assignPriorityClass(1);

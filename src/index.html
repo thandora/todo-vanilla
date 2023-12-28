@@ -24,12 +24,18 @@
 
       <div class="task-view">
         <form action="" method="get">
-          <div class="form-column"></div>
+          <div class="form-column priority-bar">
+            <select name="priority" id="priority-select">
+              <option value="1">High</option>
+              <option value="2">Normal</option>
+              <option value="3">Low</option>
+            </select>
+          </div>
 
           <div class="form-column">
             <input type="checkbox" name="is-finished" class="checkbox-status" />
             <span class="checkmark"></span>
-            <textarea display="inline-block" rows="2"></textarea>
+            <textarea name="title" display="inline-block" rows="2" required></textarea>
           </div>
 
           <div class="form-column">
