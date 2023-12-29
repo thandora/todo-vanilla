@@ -8,7 +8,7 @@ function loadLists(lists) {
   const domTaskLists = document.querySelector(".task-lists");
 
   for (const list of lists) {
-    const listNode = createListNode(list.title);
+    const listNode = createListNode(list);
 
     attachLoadTasks(listNode, list);
     attachLoadTitle(listNode, list);
@@ -17,7 +17,7 @@ function loadLists(lists) {
   }
 }
 
-function attachListEvents(listNodes) {
+function attachActiveStateSwitch(listNodes) {
   // Toggles "active" class state.
   for (const listNode of listNodes) {
     listNode.addEventListener("click", () => {
@@ -53,4 +53,4 @@ function loadTasks(tasks, containerClass) {
   }
 }
 
-export { loadLists, attachListEvents };
+export { loadLists, attachActiveStateSwitch };
