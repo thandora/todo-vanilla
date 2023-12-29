@@ -31,17 +31,22 @@
               <option value="3">Low</option>
             </select>
 
-            <input type="date" name="dueDate" id="dueDate" />
+            <input id="dueDate" type="date" name="dueDate" />
           </div>
 
           <div class="form-column">
             <input type="checkbox" name="is-finished" class="checkbox-status" />
-            <span class="checkmark"></span>
-            <textarea name="title" display="inline-block" rows="2" required></textarea>
+            <textarea
+              id="task-title"
+              name="title"
+              display="inline-block"
+              rows="2"
+              required
+            ></textarea>
           </div>
 
           <div class="form-column">
-            <textarea name="description" awcols="30" rows="10">Description</textarea>
+            <textarea id="task-description" name="description" awcols="30" rows="10">Description</textarea>
           </div>
 
           <button type="submit">Save</button>
