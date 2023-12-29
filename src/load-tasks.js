@@ -1,5 +1,6 @@
 import { createListNode } from "./task-lists-node";
 import { createTaskNoteNode } from "./task-note-node";
+import { assignPriorityClass, attachTaskView } from "./load-task-view";
 
 const CONTAINER_CLASS = "tasks";
 const TASK_TITLE_CLASS = "list-title";
@@ -17,6 +18,35 @@ function loadLists(lists) {
   }
 }
 
+function attachLoadTasks(listNode, list) {
+  listNode.addEventListener("click", () => {
+    clearTaskView();
+    loadTasks(list.tasks, CONTAINER_CLASS);
+  });
+}
+
+function clearTaskView() {
+  const tasksContainer = document.querySelector(`.${CONTAINER_CLASS}`);
+  while (tasksContainer.firstChild) {
+    tasksContainer.removeChild(tasksContainer.firstChild);
+  }
+}
+
+function loadTasks(tasks, containerClass) {
+  const domTasks = document.querySelector(`.${containerClass}`);
+
+  for (const task of tasks) {
+    const taskNode = createTaskNoteNode(task);
+    domTasks.appendChild(taskNode);
+  }
+}
+
+function attachLoadTitle(listNode, list) {
+  listNode.addEventListener("click", () => {
+    document.querySelector(`.${TASK_TITLE_CLASS}`).textContent = list.title;
+  });
+}
+
 function attachActiveStateSwitch(listNodes) {
   // Toggles "active" class state.
   for (const listNode of listNodes) {
@@ -29,35 +59,6 @@ function attachActiveStateSwitch(listNodes) {
         listNode.classList.add("active");
       }
     });
-  }
-}
-
-function attachLoadTasks(listNode, list) {
-  listNode.addEventListener("click", () => {
-    clearTaskView();
-    loadTasks(list.tasks, CONTAINER_CLASS);
-  });
-}
-
-function attachLoadTitle(listNode, list) {
-  listNode.addEventListener("click", () => {
-    document.querySelector(`.${TASK_TITLE_CLASS}`).textContent = list.title;
-  });
-}
-
-function loadTasks(tasks, containerClass) {
-  const domTasks = document.querySelector(`.${containerClass}`);
-
-  for (const task of tasks) {
-    const taskNode = createTaskNoteNode(task);
-    domTasks.appendChild(taskNode);
-  }
-}
-
-function clearTaskView() {
-  const tasksContainer = document.querySelector(`.${CONTAINER_CLASS}`);
-  while (tasksContainer.firstChild) {
-    tasksContainer.removeChild(tasksContainer.firstChild);
   }
 }
 
