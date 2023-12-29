@@ -23,3 +23,5 @@ This is a list of assets used to be credited in a stand-alone section on the sit
 ## Todo
 
 - [ ] Circular checkbox?
+- [ ] Add creation date info on task view.
+- [ ] Add delete task button on task view.
