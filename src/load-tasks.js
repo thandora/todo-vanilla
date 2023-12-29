@@ -1,6 +1,6 @@
 import { createListNode } from "./task-lists-node";
 import { createTaskNoteNode } from "./task-note-node";
-import { assignPriorityClass, attachTaskView } from "./load-task-view";
+import { assignPriorityClass, attachTaskView, loadTaskView } from "./load-task-view";
 
 const CONTAINER_CLASS = "tasks";
 const TASK_TITLE_CLASS = "list-title";
@@ -37,6 +37,7 @@ function loadTasks(tasks, containerClass) {
 
   for (const task of tasks) {
     const taskNode = createTaskNoteNode(task);
+    attachTaskView(taskNode, task);
     domTasks.appendChild(taskNode);
   }
 }
