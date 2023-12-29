@@ -19,7 +19,9 @@ function assignPriorityClass(priorityNumber) {
 }
 
 function attachTaskView(taskNode, task) {
-  taskNode.addEventListener("click", loadTaskView(task));
+  taskNode.addEventListener("click", () => {
+    loadTaskView(task);
+  });
 }
 
 function loadTaskView(task) {
@@ -31,4 +33,4 @@ function loadTaskView(task) {
 
 // const currentDate = format(new Date(), "yyyy-MM-dd");
 // document.querySelector("#dueDate").value = currentDate;
-export { assignPriorityClass, attachTaskView };
+export { assignPriorityClass, attachTaskView, loadTaskView };
