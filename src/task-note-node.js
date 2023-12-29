@@ -31,6 +31,7 @@ function createTaskNoteNode(task) {
 
   taskNode.append(header, body, footer);
   taskNode.classList.add("note-view");
+  taskNode.setAttribute("data-task-id", task.id);
   return taskNode;
 }
 
