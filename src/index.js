@@ -1,7 +1,7 @@
 import { Task } from "./task";
 import { TaskManager } from "./task-manager";
 import { ListManager } from "./list-manager";
-import { loadLists, attachListEvents } from "./load-tasks";
+import { loadLists, attachActiveStateSwitch } from "./load-tasks";
 import { assignPriorityClass } from "./load-task-view";
 import "./style.css";
 
@@ -31,6 +31,9 @@ listManager.addList(list2);
 // Load lists DOM
 loadLists(listManager.lists);
 const listNodes = document.querySelectorAll(".btn-list");
-attachListEvents(listNodes);
+attachActiveStateSwitch(listNodes);
 
-assignPriorityClass(1);
+// tests
+import { format } from "date-fns";
+// document.querySelector("#dueDate").value = format(task1.dueDate, "yyyy-MM-dd");
+// assignPriorityClass(1);
