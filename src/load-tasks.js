@@ -34,6 +34,7 @@ function attachActiveStateSwitch(listNodes) {
 
 function attachLoadTasks(listNode, list) {
   listNode.addEventListener("click", () => {
+    clearTaskView();
     loadTasks(list.tasks, CONTAINER_CLASS);
   });
 }
@@ -50,6 +51,13 @@ function loadTasks(tasks, containerClass) {
   for (const task of tasks) {
     const taskNode = createTaskNoteNode(task);
     domTasks.appendChild(taskNode);
+  }
+}
+
+function clearTaskView() {
+  const tasksContainer = document.querySelector(`.${CONTAINER_CLASS}`);
+  while (tasksContainer.firstChild) {
+    tasksContainer.removeChild(tasksContainer.firstChild);
   }
 }
 
