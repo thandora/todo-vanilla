@@ -29,6 +29,7 @@ function loadTaskView(task) {
   document.querySelector("#task-description").value = task.description;
   document.querySelector("#priority-select").value = task.priority;
   document.querySelector("#due-date").value = format(task.dueDate, "yyyy-MM-dd");
+  document.querySelector("#taskId").value = task.id;
 }
 
 // const currentDate = format(new Date(), "yyyy-MM-dd");
