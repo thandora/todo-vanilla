@@ -20,15 +20,15 @@ function loadLists(lists) {
 
 function attachLoadTasks(listNode, list) {
   listNode.addEventListener("click", () => {
-    clearTaskView();
+    clearNode(`.${CONTAINER_CLASS}`);
     loadTasks(list.tasks, CONTAINER_CLASS);
   });
 }
 
-function clearTaskView() {
-  const tasksContainer = document.querySelector(`.${CONTAINER_CLASS}`);
-  while (tasksContainer.firstChild) {
-    tasksContainer.removeChild(tasksContainer.firstChild);
+function clearNode(querySelector) {
+  const node = document.querySelector(querySelector);
+  while (node.firstChild) {
+    node.removeChild(node.firstChild);
   }
 }
 
