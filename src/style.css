@@ -23,34 +23,76 @@ body {
 
 /* Task lists section */
 .lists-container {
+  display: flex;
+  flex-direction: column;
   background-color: #11211b;
   grid-column: 1 / 2;
   border-right: 1px solid #22312c;
   padding: 26px 14px;
-
 }
 
 .task-lists .btn-list {
+  display: flex;
+  align-items: center;
   text-align: left;
   height: 50px;
   width: 100%;
   border-radius: 24px;
   background: none;
-  color: #8c9e98;
+  color: #ddf2eb;
   border: none;
-  padding: 6px;
-  padding-left: 24px;
+  padding: 6px 24px;
   font: inherit;
   cursor: pointer;
+  transition: 0.2s ease;
+
 }
 
 .task-lists .btn-list:hover {
-  color: #ddf2eb;
+  color: rgb(108, 199, 167)
 }
+
 
 .task-lists .btn-list.active {
   background-color: #90d6bd;
   color: #091a14;
+}
+
+.lists-container .footer {
+  margin-top: auto;
+}
+
+
+.lists-container .footer p {
+  height: 65px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-justify: center;
+  cursor: pointer;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #ddf2eb;
+}
+
+.lists-container .footer p:hover {
+  color: rgb(108, 199, 167)
+}
+
+.lists-container .footer button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: url("./images/plus.png") no-repeat center #636dc6;
+  background-size: 28px;
+}
+
+.lists-container .footer p:hover>button {
+  background-color: #4e559b;
 }
 
 /* Tasks section */
