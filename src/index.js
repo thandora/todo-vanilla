@@ -1,7 +1,13 @@
 import { Task } from "./task";
 import { TaskManager } from "./task-manager";
 import { listManager } from "./list-manager";
-import { loadLists, attachActiveStateSwitch, attachNewList, loadTasks } from "./load-tasks";
+import {
+  loadLists,
+  attachActiveStateSwitch,
+  attachNewList,
+  loadTasks,
+  loadTitle,
+} from "./load-tasks";
 import "./style.css";
 import { attachSaveTask } from "./task-edit";
 import { loadTaskView } from "./load-task-view";
@@ -40,6 +46,7 @@ attachActiveStateSwitch(listNodes);
 // Attach event for adding new list
 attachNewList();
 loadTasks(listManager.lists[0].tasks, TASKS_CONTAINER_CLASS, listManager.lists[0]);
+loadTitle(listManager.lists[0]);
 document.querySelector(".btn-list").classList.add("active");
 // Attach event for saving changes on task
 loadTaskView(listManager.lists[0].tasks[0]);
