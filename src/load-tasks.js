@@ -101,4 +101,4 @@ function attachActiveStateSwitch(listNodes) {
   }
 }
 
-export { loadLists, attachActiveStateSwitch, attachNewList };
+export { loadLists, attachActiveStateSwitch, attachNewList, loadTasks };
