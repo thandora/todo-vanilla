@@ -87,7 +87,7 @@ function loadTasks(tasks, containerClass) {
 
 function attachLoadTitle(listNode, list) {
   listNode.addEventListener("click", () => {
-    document.querySelector(`.${TASK_TITLE_CLASS}`).textContent = list.title;
+    loadTitle(list);
   });
 }
 
@@ -106,4 +106,8 @@ function attachActiveStateSwitch(listNodes) {
   }
 }
 
-export { loadLists, attachActiveStateSwitch, attachNewList, loadTasks, clearNode };
+function loadTitle(list) {
+  document.querySelector(`.${TASK_TITLE_CLASS}`).textContent = list.title;
+}
+
+export { loadLists, attachActiveStateSwitch, attachNewList, loadTasks, clearNode, loadTitle };
