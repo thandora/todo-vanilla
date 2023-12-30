@@ -13,22 +13,38 @@ function saveChanges(task) {
 
 function attachSaveTask() {
   document.querySelector("button[type='button']").addEventListener("click", () => {
-    const taskId = +document.querySelector("#taskId").value;
-    const listId = +document.querySelector(".btn-list.active").getAttribute("data-list-id");
-
-    const activeList = listManager.lists.find((list) => {
-      return list.id === listId;
-    });
-
-    const activeTask = activeList.tasks.find((task) => {
-      return task.id === taskId;
-    });
+    const activeList = getCurrentList();
+    const activeTask = getCurrentTask();
 
     saveChanges(activeTask);
     clearNode(`.${TASKS_CONTAINER_CLASS}`);
     loadTasks(activeList.tasks, TASKS_CONTAINER_CLASS);
-    console.log(activeTask);
   });
+}
+
+function getCurrentTask() {
+  const taskId = getCurrentTaskId();
+  const currentList = getCurrentList();
+
+  return currentList.tasks.find((task) => {
+    return task.id === taskId;
+  });
+}
+
+function getCurrentTaskId() {
+  return +document.querySelector("#taskId").value;
+}
+
+function getCurrentList() {
+  const listId = getCurrentListId();
+
+  return listManager.lists.find((list) => {
+    return list.id === listId;
+  });
+}
+
+function getCurrentListId() {
+  return +document.querySelector(".btn-list.active").getAttribute("data-list-id");
 }
 
 export { attachSaveTask };
