@@ -47,4 +47,4 @@ function getCurrentListId() {
   return +document.querySelector(".btn-list.active").getAttribute("data-list-id");
 }
 
-export { attachSaveTask };
+export { attachSaveTask, getCurrentList, getCurrentTask };

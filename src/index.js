@@ -11,6 +11,7 @@ import {
 import "./style.css";
 import { attachSaveTask } from "./task-edit";
 import { loadTaskView } from "./load-task-view";
+import { attachNewTask } from "./task-new";
 
 // Tasks container
 const TASKS_CONTAINER_CLASS = "tasks";
@@ -51,3 +52,5 @@ document.querySelector(".btn-list").classList.add("active");
 // Attach event for saving changes on task
 loadTaskView(listManager.lists[0].tasks[0]);
 attachSaveTask();
+
+attachNewTask();
