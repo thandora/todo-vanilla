@@ -3,12 +3,13 @@ import { TaskManager } from "./task-manager";
 import { listManager } from "./list-manager";
 import { loadLists, attachActiveStateSwitch, attachNewList, loadTasks } from "./load-tasks";
 import "./style.css";
+import { attachSaveTask } from "./task-edit";
 
 // Tasks container
 const TASKS_CONTAINER_CLASS = "tasks";
 
 // Create  sample tasks
-const task1 = new Task("Task Title", "Task description", new Date("2023-05-02"), 1);
+const task1 = new Task("Task Title", "Task description", new Date("2023-05-02"), 1, new Date());
 const task2 = new Task(
   "Another Task",
   "This is a pretty long task description, wouldn't you say?This is a pretty long task description, wouldn't you say?This is a pretty long task description, wouldn't you say?",
@@ -37,6 +38,8 @@ const listNodes = document.querySelectorAll(".btn-list");
 attachActiveStateSwitch(listNodes);
 // Load event listener for adding new list
 attachNewList();
-loadTasks(listManager.lists[0].tasks, TASKS_CONTAINER_CLASS);
+loadTasks(listManager.lists[0].tasks, TASKS_CONTAINER_CLASS, listManager.lists[0]);
 document.querySelector(".btn-list").classList.add("active");
 // tests
+
+attachSaveTask();
