@@ -1,12 +1,49 @@
 import { createListNode } from "./task-lists-node";
 import { createTaskNoteNode } from "./task-note-node";
-import { assignPriorityClass, attachTaskView, loadTaskView } from "./load-task-view";
+import { attachTaskView } from "./load-task-view";
+import { listManager } from "./list-manager";
+import { TaskManager } from "./task-manager";
 
 const CONTAINER_CLASS = "tasks";
 const TASK_TITLE_CLASS = "list-title";
 
+function attachNewList() {
+  // Add event listener to "add new list" button which allows update to
+  // the lists section DOM.
+  document.querySelector(".lists-container .footer p").addEventListener("click", () => {
+    const newList = new TaskManager("New list");
+    listManager.addList(newList);
+    loadLists(listManager.lists);
+
+    let listNodes = document.querySelectorAll(".btn-list");
+    attachActiveStateSwitch(listNodes);
+
+    const newListNode = document.querySelector(`.btn-list[data-list-id="${newList.id}"]`);
+    newListNode.setAttribute("contenteditable", true);
+
+    selectAllText(newListNode);
+
+    newListNode.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        newListNode.setAttribute("contenteditable", false);
+        newList.title = newListNode.textContent;
+      }
+    });
+  });
+}
+
+function selectAllText(node) {
+  const range = document.createRange();
+  range.selectNodeContents(node);
+
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
+}
+
 function loadLists(lists) {
   const domTaskLists = document.querySelector(".task-lists");
+  clearNode(".task-lists");
 
   for (const list of lists) {
     const listNode = createListNode(list);
@@ -63,4 +100,4 @@ function attachActiveStateSwitch(listNodes) {
   }
 }
 
-export { loadLists, attachActiveStateSwitch };
+export { loadLists, attachActiveStateSwitch, attachNewList };

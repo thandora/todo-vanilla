@@ -1,7 +1,7 @@
 import { Task } from "./task";
 import { TaskManager } from "./task-manager";
-import { ListManager } from "./list-manager";
-import { loadLists, attachActiveStateSwitch } from "./load-tasks";
+import { listManager } from "./list-manager";
+import { loadLists, attachActiveStateSwitch, attachNewList } from "./load-tasks";
 import "./style.css";
 
 // Create  sample tasks
@@ -25,13 +25,14 @@ list2.addTask(task3);
 list2.addTask(task4);
 
 // Create list manager
-const listManager = new ListManager();
 listManager.addList(list1);
 listManager.addList(list2);
 
-// Load lists DOM
+//// Load DOM
 loadLists(listManager.lists);
 const listNodes = document.querySelectorAll(".btn-list");
 attachActiveStateSwitch(listNodes);
+// Load event listener for adding new list
+attachNewList();
 
 // tests
