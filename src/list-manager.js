@@ -13,4 +13,5 @@ class ListManager {
   }
 }
 
-export { ListManager };
+const listManager = new ListManager();
+export { listManager };
