@@ -28,7 +28,11 @@ function loadTaskView(task) {
   document.querySelector("#task-title").value = task.title;
   document.querySelector("#task-description").value = task.description;
   document.querySelector("#priority-select").value = task.priority;
-  document.querySelector("#due-date").value = format(task.dueDate, "yyyy-MM-dd");
+  let dueDate = "";
+  if (task.dueDate) {
+    dueDate = format(task.dueDate, "yyyy-MM-dd");
+  }
+  document.querySelector("#due-date").value = dueDate;
   document.querySelector("#taskId").value = task.id;
 }
 
