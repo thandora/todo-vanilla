@@ -27,9 +27,13 @@ function attachNewList() {
     clearNode(`.${CONTAINER_CLASS}`);
     newListNode.focus();
 
-    newListNode.addEventListener("keyup", () => {
+    newListNode.addEventListener("keyup", (e) => {
       newList.title = newListNode.textContent;
       document.querySelector(`.${TASK_TITLE_CLASS}`).textContent = newList.title;
+
+      if (e.key === "Enter") {
+        newListNode.setAttribute("contenteditable", false);
+      }
     });
   });
 }
