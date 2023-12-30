@@ -20,14 +20,15 @@ function attachNewList() {
 
     const newListNode = document.querySelector(`.btn-list[data-list-id="${newList.id}"]`);
     newListNode.setAttribute("contenteditable", true);
+    newListNode.classList.add("active");
 
     selectAllText(newListNode);
 
-    newListNode.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        newListNode.setAttribute("contenteditable", false);
-        newList.title = newListNode.textContent;
-      }
+    newListNode.focus();
+
+    newListNode.addEventListener("keyup", () => {
+      newList.title = newListNode.textContent;
+      document.querySelector(`.${TASK_TITLE_CLASS}`).textContent = newList.title;
     });
   });
 }
