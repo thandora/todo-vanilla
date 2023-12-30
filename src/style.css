@@ -55,6 +55,7 @@ body {
 
 .task-lists .btn-list.active {
   background-color: #90d6bd;
+  outline: none;
   color: #091a14;
 }
 
