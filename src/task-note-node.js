@@ -6,8 +6,12 @@ function createTaskNoteNode(task) {
 
   const priorityContainer = document.createElement("div");
   priorityContainer.textContent = task.priority;
+  let dueDate = "";
+  if (task.dueDate) {
+    dueDate = format(task.dueDate, DATE_FORMAT);
+  }
   const dueContainer = document.createElement("div");
-  dueContainer.textContent = format(task.dueDate, DATE_FORMAT);
+  dueContainer.textContent = dueDate;
 
   const header = document.createElement("div");
   header.classList.add("header");
