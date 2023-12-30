@@ -24,6 +24,7 @@ function attachNewList() {
 
     selectAllText(newListNode);
 
+    clearNode(`.${CONTAINER_CLASS}`);
     newListNode.focus();
 
     newListNode.addEventListener("keyup", () => {
