@@ -27,3 +27,4 @@ This is a list of assets used to be credited in a stand-alone section on the sit
 - [ ] Circular checkbox?
 - [ ] Add creation date info on task view.
 - [ ] Add delete task button on task view.
+- [ ] Bug: can't add whitespace to list name (because it's a button)
