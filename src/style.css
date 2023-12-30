@@ -100,13 +100,15 @@ body {
   overflow-y: auto;
 }
 
-.tasks-container .title-container,
 .tasks-container .tasks {
   padding: 14px;
 }
 
 .tasks-container .title-container {
-  height: 60px;
+  padding: 0px 14px;
+  display: flex;
+  align-items: center;
+  height: 65px;
   position: sticky;
   top: 0;
   background-color: #11211b;
@@ -115,6 +117,38 @@ body {
 
 .tasks-container .list-title {
   margin: 0;
+}
+
+.tasks-container .title-container p {
+  margin: 0;
+  margin-left: auto;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  text-decoration: none;
+  color: #ddf2eb;
+}
+
+.tasks-container .title-container p:hover {
+  color: rgb(108, 199, 167)
+}
+
+.tasks-container .title-container button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: url("./images/plus.png") no-repeat center #636dc6;
+  background-size: 28px;
+}
+
+.tasks-container .title-container p:hover>button {
+  background-color: #4e559b;
 }
 
 .tasks {
