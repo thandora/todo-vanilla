@@ -171,18 +171,27 @@ body {
   min-height: 220px;
   height: min-content;
 
-  padding: 16px 18px;
   padding-bottom: 10px;
   background-color: #132631;
   border-radius: 8px;
 }
 
 .tasks .note-view .header {
+  padding: 16px 18px;
   display: flex;
   justify-content: space-between;
 }
 
+.tasks .note-view .body {
+  padding: 0 18px;
+}
+
+.tasks .note-view .body .title {
+  margin-top: 0px
+}
+
 .tasks .note-view .footer {
+  padding: 0 18px;
   margin-left: auto;
   margin-top: auto;
 }
@@ -231,6 +240,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.priority-bar.priority-low {
+  background-color: #636dc6;
+}
+
+.priority-bar.priority-high {
+  background-color: rgb(252, 128, 128);
 }
 
 .task-view textarea {
