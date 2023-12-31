@@ -26,7 +26,7 @@ const task2 = new Task(
   new Date()
 );
 const task3 = new Task("buy flour", "at supermarket", new Date("2023-12-25"), 2, new Date());
-const task4 = new Task("buy chocolate", "at supermarket", new Date("2023-12-25"), 1, new Date());
+const task4 = new Task("buy chocolate", "at supermarket", new Date("2023-12-25"), 3, new Date());
 
 // Create task lists
 const list1 = new TaskManager("General");
@@ -53,7 +53,6 @@ document.querySelector(".btn-list").classList.add("active");
 loadTaskView(listManager.lists[0].tasks[0]);
 // Attach event for saving changes on task
 attachSaveTask();
-
+// Attach event for adding new task
 attachNewTask();
 
-console.log(listManager.lists);

@@ -177,9 +177,26 @@ body {
 }
 
 .tasks .note-view .header {
-  padding: 16px 18px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 12px 18px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: space-between;
+}
+
+.header.priority-high {
+  background-color: rgb(252, 128, 128);
+  color: #0d211a;
+}
+
+.header.priority-normal {
+  background-color: #636dc6;
+}
+
+.header.priority-low {
+  background-color: #abddeb;
+  color: #0d211a;
 }
 
 .tasks .note-view .body {
@@ -242,12 +259,16 @@ body {
   align-items: center;
 }
 
-.priority-bar.priority-low {
+.priority-bar.priority-high {
+  background-color: rgb(252, 128, 128);
+}
+
+.priority-bar.priority-normal {
   background-color: #636dc6;
 }
 
-.priority-bar.priority-high {
-  background-color: rgb(252, 128, 128);
+.priority-bar.priority-low {
+  background-color: #ddf2eb;
 }
 
 .task-view textarea {
