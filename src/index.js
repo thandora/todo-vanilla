@@ -22,10 +22,11 @@ const task2 = new Task(
   "Another Task",
   "This is a pretty long task description, wouldn't you say?This is a pretty long task description, wouldn't you say?This is a pretty long task description, wouldn't you say?",
   new Date("2022-02-04"),
-  2
+  2,
+  new Date()
 );
-const task3 = new Task("buy flour", "at supermarket", new Date("2023-12-25"), "2");
-const task4 = new Task("buy chocolate", "at supermarket", new Date("2023-12-25"), "3");
+const task3 = new Task("buy flour", "at supermarket", new Date("2023-12-25"), 2, new Date());
+const task4 = new Task("buy chocolate", "at supermarket", new Date("2023-12-25"), 1, new Date());
 
 // Create task lists
 const list1 = new TaskManager("General");
@@ -49,8 +50,10 @@ attachNewList();
 loadTasks(listManager.lists[0].tasks, TASKS_CONTAINER_CLASS, listManager.lists[0]);
 loadTitle(listManager.lists[0]);
 document.querySelector(".btn-list").classList.add("active");
-// Attach event for saving changes on task
 loadTaskView(listManager.lists[0].tasks[0]);
+// Attach event for saving changes on task
 attachSaveTask();
 
 attachNewTask();
+
+console.log(listManager.lists);
