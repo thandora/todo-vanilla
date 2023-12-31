@@ -1,6 +1,6 @@
 import { createListNode } from "./task-lists-node";
 import { createTaskNoteNode } from "./task-note-node";
-import { attachTaskView } from "./load-task-view";
+import { assignPriorityClass, attachTaskView } from "./load-task-view";
 import { listManager } from "./list-manager";
 import { TaskManager } from "./task-manager";
 
@@ -76,12 +76,13 @@ function clearNode(querySelector) {
 }
 
 function loadTasks(tasks, containerClass) {
-  const domTasks = document.querySelector(`.${containerClass}`);
+  const tasksNode = document.querySelector(`.${containerClass}`);
 
   for (const task of tasks) {
     const taskNode = createTaskNoteNode(task);
     attachTaskView(taskNode, task);
-    domTasks.appendChild(taskNode);
+    assignPriorityClass(taskNode.querySelector(".header"), task.priority);
+    tasksNode.appendChild(taskNode);
   }
 }
 
