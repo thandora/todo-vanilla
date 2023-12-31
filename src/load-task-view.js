@@ -1,8 +1,6 @@
 import { format } from "date-fns";
 
-function assignPriorityClass(priorityNumber) {
-  const priorityBar = document.querySelector(".form-row.priority-bar");
-
+function assignPriorityClass(node, priorityNumber) {
   const priorityClasses = {
     1: "priority-high",
     2: "priority-normal",
@@ -11,9 +9,9 @@ function assignPriorityClass(priorityNumber) {
 
   for (const [num, pClass] of Object.entries(priorityClasses)) {
     if (priorityNumber === +num) {
-      priorityBar.classList.add(pClass);
+      node.classList.add(pClass);
     } else {
-      priorityBar.classList.remove(pClass);
+      node.classList.remove(pClass);
     }
   }
 }
@@ -35,7 +33,8 @@ function loadTaskView(task) {
   document.querySelector("#due-date").value = dueDate;
   document.querySelector("#taskId").value = task.id;
 
-  assignPriorityClass(+task.priority);
+  const priorityBar = document.querySelector(".form-row.priority-bar");
+  assignPriorityClass(priorityBar, +task.priority);
 }
 
 export { assignPriorityClass, attachTaskView, loadTaskView };
