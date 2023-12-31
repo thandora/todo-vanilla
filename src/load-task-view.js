@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 
 function assignPriorityClass(priorityNumber) {
-  const priorityBar = document.querySelector(".form-column.priority-bar");
+  const priorityBar = document.querySelector(".form-row.priority-bar");
 
   const priorityClasses = {
     1: "priority-high",
@@ -34,8 +34,8 @@ function loadTaskView(task) {
   }
   document.querySelector("#due-date").value = dueDate;
   document.querySelector("#taskId").value = task.id;
+
+  assignPriorityClass(+task.priority);
 }
 
-// const currentDate = format(new Date(), "yyyy-MM-dd");
-// document.querySelector("#dueDate").value = currentDate;
 export { assignPriorityClass, attachTaskView, loadTaskView };
