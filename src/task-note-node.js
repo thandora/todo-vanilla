@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { assignPriorityClass } from "./load-task-view";
 const DATE_FORMAT = "MMM d yyyy";
 
 function createTaskNoteNode(task) {
@@ -15,6 +16,8 @@ function createTaskNoteNode(task) {
 
   const header = document.createElement("div");
   header.classList.add("header");
+  assignPriorityClass(header, task.priority);
+  header.classList.add();
   header.append(priorityContainer, dueContainer);
 
   const taskTitle = document.createElement("h3");
