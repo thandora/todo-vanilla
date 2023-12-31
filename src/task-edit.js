@@ -7,7 +7,7 @@ const TASKS_CONTAINER_CLASS = "tasks";
 function saveChanges(task) {
   task.title = document.querySelector("#task-title").value;
   task.description = document.querySelector("#task-description").value;
-  task.priority = document.querySelector("#priority-select").value;
+  task.priority = +document.querySelector("#priority-select").value;
   task.dueDate = document.querySelector("#due-date").value;
 }
 
