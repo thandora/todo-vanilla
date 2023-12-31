@@ -110,12 +110,4 @@ function loadTitle(list) {
   document.querySelector(`.${TASK_TITLE_CLASS}`).textContent = list.title;
 }
 
-export {
-  loadLists,
-  attachActiveStateSwitch,
-  attachNewList,
-  loadTasks,
-  clearNode,
-  loadTitle,
-  selectAllText,
-};
+export { loadLists, attachActiveStateSwitch, attachNewList, loadTasks, clearNode, loadTitle };
