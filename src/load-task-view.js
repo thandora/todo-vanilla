@@ -37,4 +37,12 @@ function loadTaskView(task) {
   assignPriorityClass(priorityBar, +task.priority);
 }
 
-export { assignPriorityClass, attachTaskView, loadTaskView };
+function taskViewPriorityBarUpdater() {
+  const priorityBar = document.querySelector(".form-row.priority-bar");
+  priorityBar.addEventListener("change", () => {
+    let currentPriority = +document.querySelector("#priority-select").value;
+    assignPriorityClass(priorityBar, currentPriority);
+  });
+}
+
+export { assignPriorityClass, attachTaskView, loadTaskView, taskViewPriorityBarUpdater };
