@@ -1,6 +1,10 @@
 import { format } from "date-fns";
-import { assignPriorityClass } from "./load-task-view";
+import { getCurrentList, getCurrentTask } from "./task-edit";
+import { clearNode, loadTasks } from "./load-tasks";
+import { loadTaskView } from "./load-task-view";
+
 const DATE_FORMAT = "MMM d yyyy";
+const CONTAINER_CLASS = "tasks";
 
 function createTaskNoteNode(task) {
   const taskNode = document.createElement("div");
@@ -30,6 +34,7 @@ function createTaskNoteNode(task) {
 
   const btnDelete = document.createElement("button");
   btnDelete.classList.add("task-delete");
+  attachDeleteTask(btnDelete, task);
   const footer = document.createElement("div");
   footer.classList.add("footer");
   footer.appendChild(btnDelete);
@@ -38,6 +43,23 @@ function createTaskNoteNode(task) {
   taskNode.classList.add("note-view");
   taskNode.setAttribute("data-task-id", task.id);
   return taskNode;
+}
+
+function attachDeleteTask(node, task) {
+  node.addEventListener("click", (e) => {
+    clearNode(`.${CONTAINER_CLASS}`);
+
+    if (getCurrentTask() === task) {
+      console.log("pass");
+      loadTaskView(null);
+    }
+
+    const currentList = getCurrentList();
+    currentList.removeTask(task.id);
+    loadTasks(currentList.tasks, CONTAINER_CLASS);
+
+    e.stopPropagation();
+  });
 }
 
 export { createTaskNoteNode };

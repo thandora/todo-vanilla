@@ -23,6 +23,11 @@ function attachTaskView(taskNode, task) {
 }
 
 function loadTaskView(task) {
+  if (task === null) {
+    document.querySelector(".task-view form").reset();
+    return;
+  }
+
   document.querySelector("#task-title").value = task.title;
   document.querySelector("#task-description").value = task.description;
   document.querySelector("#priority-select").value = task.priority;
