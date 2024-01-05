@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { getCurrentList, getCurrentTask } from "./task-edit";
 import { clearNode, loadTasks } from "./load-tasks";
 import { loadTaskView } from "./load-task-view";
+import { saveLocalListManager } from "./local-storage-fns";
 
 const DATE_FORMAT = "MMM d yyyy";
 const CONTAINER_CLASS = "tasks";
@@ -55,6 +56,7 @@ function attachDeleteTask(node, task) {
 
     const currentList = getCurrentList();
     currentList.removeTask(task.id);
+    saveLocalListManager();
     loadTasks(currentList.tasks, CONTAINER_CLASS);
 
     e.stopPropagation();
