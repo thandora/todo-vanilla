@@ -11,7 +11,7 @@ function createTaskNoteNode(task) {
 
   const priorityContainer = document.createElement("div");
   priorityContainer.textContent = task.priority;
-  let dueDate = "";
+  let dueDate = undefined;
   if (task.dueDate) {
     dueDate = format(task.dueDate, DATE_FORMAT);
   }
@@ -50,7 +50,6 @@ function attachDeleteTask(node, task) {
     clearNode(`.${CONTAINER_CLASS}`);
 
     if (getCurrentTask() === task) {
-      console.log("pass");
       loadTaskView(null);
     }
 

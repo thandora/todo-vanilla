@@ -17,7 +17,12 @@ function loadLocalListManager() {
 function parseTask(rawTask) {
   const title = rawTask.title;
   const description = rawTask.description;
-  const dueDate = new Date(rawTask.dueDate);
+  let dueDate = undefined;
+
+  if (rawTask.dueDate !== undefined) {
+    dueDate = new Date(rawTask.dueDate);
+  }
+
   const createDate = new Date(rawTask.createDate);
   const priority = rawTask.priority;
 
