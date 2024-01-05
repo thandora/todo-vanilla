@@ -17,7 +17,7 @@ function attachNewTask() {
 }
 
 function newTaskEvent() {
-  const newTask = new Task("Untitled task", "", "", "2", new Date());
+  const newTask = new Task("Untitled task", "", "", 2, new Date());
   const currentList = getCurrentList();
   currentList.addTask(newTask);
   clearNode(`.${TASKS_CONTAINER_CLASS}`);
