@@ -15,15 +15,13 @@ import { loadLocalListManager } from "./local-storage-fns";
 
 // Tasks container class
 const TASKS_CONTAINER_CLASS = "tasks";
+
 // Load listManager, from localStorage or from sample data.
 if (localStorage.getItem("listManager") !== null) {
   loadLocalListManager();
-  console.log("IF HAS RUN");
 } else {
   sampleLists.forEach((l) => listManager.addList(l));
 }
-
-console.log(listManager);
 //// Load DOM
 loadLists(listManager.lists);
 const listNodes = document.querySelectorAll(".btn-list");
