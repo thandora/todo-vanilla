@@ -10,13 +10,6 @@ module.exports = {
     clean: true,
   },
 
-  mode: "development",
-  devtool: "inline-source-map",
-  devServer: {
-    static: "./dist",
-    port: 5500,
-  },
-
   module: {
     rules: [
       {
@@ -34,7 +27,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      title: "My title",
+      title: "ToDoT",
     }),
   ],
 };
