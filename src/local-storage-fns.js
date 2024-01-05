@@ -21,7 +21,7 @@ function parseTask(rawTask) {
   const createDate = new Date(rawTask.createDate);
   const priority = rawTask.priority;
 
-  const parsedTask = new Task(title, description, dueDate, createDate, priority);
+  const parsedTask = new Task(title, description, dueDate, priority, createDate);
   parsedTask.id = rawTask.id;
 
   return parsedTask;
