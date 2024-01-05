@@ -3,6 +3,7 @@ import { createTaskNoteNode } from "./task-note-node";
 import { assignPriorityClass, attachTaskView } from "./load-task-view";
 import { listManager } from "./list-manager";
 import { TaskManager } from "./task-manager";
+import { saveLocalListManager } from "./local-storage-fns";
 
 const CONTAINER_CLASS = "tasks";
 const TASK_TITLE_CLASS = "list-title";
@@ -13,6 +14,7 @@ function attachNewList() {
   document.querySelector(".lists-container .footer p").addEventListener("click", () => {
     const newList = new TaskManager("New list");
     listManager.addList(newList);
+    saveLocalListManager();
     loadLists(listManager.lists);
 
     let listNodes = document.querySelectorAll(".btn-list");

@@ -1,6 +1,7 @@
 import { loadTasks } from "./load-tasks";
 import { listManager } from "./list-manager";
 import { clearNode } from "./load-tasks";
+import { saveLocalListManager } from "./local-storage-fns";
 
 const TASKS_CONTAINER_CLASS = "tasks";
 
@@ -8,7 +9,12 @@ function saveChanges(task) {
   task.title = document.querySelector("#task-title").value;
   task.description = document.querySelector("#task-description").value;
   task.priority = +document.querySelector("#priority-select").value;
-  task.dueDate = document.querySelector("#due-date").value;
+  if (document.querySelector("#due-date").value === "") {
+    task.dueDate = undefined;
+  } else {
+    task.dueDate = document.querySelector("#due-date").value;
+  }
+  saveLocalListManager();
 }
 
 function attachSaveTask() {

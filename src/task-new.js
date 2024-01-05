@@ -2,6 +2,7 @@ import { loadTaskView } from "./load-task-view";
 import { Task } from "./task";
 import { getCurrentList } from "./task-edit";
 import { loadTasks, clearNode } from "./load-tasks";
+import { saveLocalListManager } from "./local-storage-fns";
 
 const TASKS_CONTAINER_CLASS = "tasks";
 
@@ -20,6 +21,7 @@ function newTaskEvent() {
   const newTask = new Task("Untitled task", "", undefined, 2, new Date());
   const currentList = getCurrentList();
   currentList.addTask(newTask);
+  saveLocalListManager();
   clearNode(`.${TASKS_CONTAINER_CLASS}`);
   loadTasks(currentList.tasks, TASKS_CONTAINER_CLASS);
   loadTaskView(newTask);
