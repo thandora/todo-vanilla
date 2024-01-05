@@ -1,6 +1,13 @@
 # Another ToDo Clone
 
-A todo project.
+A ToDo application. No frameworks used.
+
+## Stack
+
+- CSS
+- HTML
+- Javascript
+- Webpack
 
 ## Assets Used
 
