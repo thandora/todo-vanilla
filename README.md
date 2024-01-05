@@ -1,5 +1,6 @@
 # Another ToDo Clone
 
+[View here](https://thandora.github.io/todo-vanilla/)  
 A ToDo application. No frameworks used.
 
 ## Stack
