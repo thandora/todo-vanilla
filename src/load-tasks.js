@@ -37,6 +37,7 @@ function attachNewList() {
       if (e.key === "Enter") {
         newListNode.setAttribute("contenteditable", false);
       }
+      saveLocalListManager();
     });
   });
 }
