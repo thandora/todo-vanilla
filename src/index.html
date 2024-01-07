@@ -14,7 +14,9 @@
   <body>
     <div class="main-container">
       <div class="lists-container">
-        <div class="task-lists"></div>
+        <div class="task-lists">
+          <ul class="nav-lists" spellcheck="false"></ul>
+        </div>
 
         <div class="footer">
           <div class="add-list-container">
@@ -35,13 +37,9 @@
         <form>
           <div class="form-row">
             <input type="checkbox" name="isFinished" class="checkbox-status" />
-            <textarea
-              id="task-title"
-              name="title"
-              display="inline-block"
-              rows="2"
-              required
-            >Title</textarea>
+            <textarea id="task-title" name="title" display="inline-block" rows="2" required>
+Title</textarea
+            >
           </div>
 
           <input type="hidden" id="taskId" name="taskId" />

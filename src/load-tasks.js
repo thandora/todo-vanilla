@@ -5,7 +5,8 @@ import { listManager } from "./list-manager";
 import { TaskManager } from "./task-manager";
 import { saveLocalListManager } from "./local-storage-fns";
 
-const CONTAINER_CLASS = "tasks";
+const TASKS_CONTAINER_CLASS = "tasks";
+const LISTS_CONTAINER_CLASS = "nav-lists";
 const TASK_TITLE_CLASS = "list-title";
 
 function attachNewList() {
@@ -26,7 +27,7 @@ function attachNewList() {
 
     selectAllText(newListNode);
 
-    clearNode(`.${CONTAINER_CLASS}`);
+    clearNode(`.${TASKS_CONTAINER_CLASS}`);
     newListNode.focus();
 
     newListNode.addEventListener("keyup", (e) => {
@@ -50,8 +51,8 @@ function selectAllText(node) {
 }
 
 function loadLists(lists) {
-  const domTaskLists = document.querySelector(".task-lists");
-  clearNode(".task-lists");
+  const domTaskLists = document.querySelector(".task-lists .nav-lists");
+  clearNode(`.${LISTS_CONTAINER_CLASS}`);
 
   for (const list of lists) {
     const listNode = createListNode(list);
@@ -65,8 +66,8 @@ function loadLists(lists) {
 
 function attachLoadTasks(listNode, list) {
   listNode.addEventListener("click", () => {
-    clearNode(`.${CONTAINER_CLASS}`);
-    loadTasks(list.tasks, CONTAINER_CLASS);
+    clearNode(`.${TASKS_CONTAINER_CLASS}`);
+    loadTasks(list.tasks, TASKS_CONTAINER_CLASS);
   });
 }
 

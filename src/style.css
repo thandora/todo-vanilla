@@ -31,6 +31,11 @@ body {
   padding: 26px 14px;
 }
 
+.task-lists ul {
+  margin: 0;
+  padding: 0;
+}
+
 .task-lists .btn-list {
   display: flex;
   align-items: center;
@@ -45,7 +50,6 @@ body {
   font: inherit;
   cursor: pointer;
   transition: 0.2s ease;
-
 }
 
 .task-lists .btn-list:hover {

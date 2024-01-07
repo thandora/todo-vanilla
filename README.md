@@ -23,6 +23,5 @@ This is a list of assets used.
 
 - Circular checkbox?
 - Add creation date info on task view.
-- Bug: can't add whitespace to list name (because it's a button)
 - Bug: can't save changes if task to be updated is not in current view.
 - Add a note status indicating if a task has been done.
