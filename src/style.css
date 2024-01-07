@@ -77,7 +77,8 @@ body {
   background: url("./images/x-mark.png") no-repeat center;
   background-size: cover;
   position: absolute;
-  right: 14px;
+  top: 12px;
+  left: 180px;
   cursor: pointer;
 }
 
