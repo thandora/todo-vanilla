@@ -50,7 +50,7 @@ function getCurrentList() {
 }
 
 function getCurrentListId() {
-  return +document.querySelector(".btn-list.active").getAttribute("data-list-id");
+  return +document.querySelector(".nav-list.active").getAttribute("data-list-id");
 }
 
 export { attachSaveTask, getCurrentList, getCurrentTask };

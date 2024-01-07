@@ -18,8 +18,8 @@ This is a list of assets used.
    - [Trash icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/trash)
 2. Plus
    - [Plus icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/plus)
-
-## Todo
+3. X-Mark
+   - [Close icons created by Darius Dan - Flaticon](https://www.flaticon.com/free-icons/close)
 
 - Circular checkbox?
 - Add creation date info on task view.

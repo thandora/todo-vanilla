@@ -1,4 +1,4 @@
-import { createListNode } from "./task-lists-node";
+import { createListNode, createDeleteListNode } from "./task-lists-node";
 import { createTaskNoteNode } from "./task-note-node";
 import { assignPriorityClass, attachTaskView } from "./load-task-view";
 import { listManager } from "./list-manager";
@@ -18,10 +18,10 @@ function attachNewList() {
     saveLocalListManager();
     loadLists(listManager.lists);
 
-    let listNodes = document.querySelectorAll(".btn-list");
+    let listNodes = document.querySelectorAll(".nav-list");
     attachActiveStateSwitch(listNodes);
 
-    const newListNode = document.querySelector(`.btn-list[data-list-id="${newList.id}"]`);
+    const newListNode = document.querySelector(`.nav-list[data-list-id="${newList.id}"]`);
     newListNode.setAttribute("contenteditable", true);
     newListNode.classList.add("active");
 
@@ -56,6 +56,8 @@ function loadLists(lists) {
 
   for (const list of lists) {
     const listNode = createListNode(list);
+    const deleteListNode = createDeleteListNode();
+    listNode.appendChild(deleteListNode);
 
     attachLoadTasks(listNode, list);
     attachLoadTitle(listNode, list);
