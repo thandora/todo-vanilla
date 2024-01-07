@@ -12,6 +12,7 @@ import { loadTaskView, taskViewPriorityBarUpdater } from "./load-task-view";
 import { attachNewTask } from "./task-new";
 import { lists as sampleLists } from "./sample-data";
 import { loadLocalListManager } from "./local-storage-fns";
+import { attachDeleteList } from "./task-lists-node";
 
 // Tasks container class
 const TASKS_CONTAINER_CLASS = "tasks";
@@ -24,8 +25,6 @@ if (localStorage.getItem("listManager") !== null) {
 }
 //// Load DOM
 loadLists(listManager.lists);
-const listNodes = document.querySelectorAll(".nav-list");
-attachActiveStateSwitch(listNodes);
 
 // Attach event for adding new list
 attachNewList();
@@ -45,3 +44,5 @@ attachSaveTask();
 
 // Attach event for adding new task
 attachNewTask();
+
+attachDeleteList();

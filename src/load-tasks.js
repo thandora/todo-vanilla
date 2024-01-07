@@ -1,4 +1,4 @@
-import { createListNode, createDeleteListNode } from "./task-lists-node";
+import { createListNode, createDeleteListNode, attachDeleteList } from "./task-lists-node";
 import { createTaskNoteNode } from "./task-note-node";
 import { assignPriorityClass, attachTaskView } from "./load-task-view";
 import { listManager } from "./list-manager";
@@ -27,8 +27,8 @@ function attachNewList() {
 
     selectAllText(newListNode);
 
-    clearNode(`.${TASKS_CONTAINER_CLASS}`);
     newListNode.focus();
+    clearNode(`.${TASKS_CONTAINER_CLASS}`);
 
     newListNode.addEventListener("keyup", (e) => {
       newList.title = newListNode.textContent;
@@ -39,6 +39,7 @@ function attachNewList() {
       }
       saveLocalListManager();
     });
+    attachDeleteList();
   });
 }
 
@@ -65,6 +66,9 @@ function loadLists(lists) {
 
     domTaskLists.appendChild(listNode);
   }
+  const listNodes = document.querySelectorAll(".nav-list");
+  attachActiveStateSwitch(listNodes);
+  attachDeleteList();
 }
 
 function attachLoadTasks(listNode, list) {
